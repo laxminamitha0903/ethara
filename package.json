@@ -5,12 +5,12 @@
   "description": "Premium Full-Stack Team Task Manager with React, Express, and MySQL.",
   "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "npm run build && node backend/server.js",
     "server": "nodemon backend/server.js",
     "client": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "npm run build --prefix frontend",
-    "postinstall": "prisma generate && npm install --prefix frontend",
+    "postinstall": "prisma generate && npm install --prefix frontend --include=dev",
     "db:migrate": "prisma migrate deploy",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.js"
