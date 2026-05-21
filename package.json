@@ -10,7 +10,7 @@
     "client": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "npm run build --prefix frontend",
-    "postinstall": "prisma generate",
+    "postinstall": "prisma generate && npm install --prefix frontend",
     "db:migrate": "prisma migrate deploy",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.js"
